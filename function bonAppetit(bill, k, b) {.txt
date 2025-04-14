@@ -1,0 +1,22 @@
+function bonAppetit(bill, k, b) {
+    // Write your code here
+    //b is what he charged her
+    //k is what she doesn't eat bill[k]
+    //if what she payed after new bill is equal to b then print 'bon appetit'
+    
+    /*const billSum= bill.reduce((a,c)=>a+c)
+    let chargedAmount=billSum/2 //what he charges her*/ //don't need because b is already what he charged her
+   
+    let newBill=bill.toSpliced(k,1) //make new bill(array) of charges less what she doesn't want to pay
+    let newBillSum=newBill.reduce((a,c)=>a+c)//sum of the new bill
+    let whatShePays=newBillSum/2//what she actually pays
+    let brianOwes=0//declare variable of what he will owe
+    
+    if(b==whatShePays){
+        console.log('Bon Appetit')
+    }else{
+        brianOwes=b-whatShePays
+        console.log(brianOwes)
+    }
+    
+}
