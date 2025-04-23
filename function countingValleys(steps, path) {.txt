@@ -1,0 +1,25 @@
+function countingValleys(steps, path) {
+    // Write your code here
+    //valley starts with a step down from sea level and ends with a step up to sea level
+    let valleys=0
+    let altitude=0
+    let inValley=false
+    for(let i=0;i<steps;i++){
+        const step=path[i]
+        
+        if(step==='U'){
+            altitude++
+        }else if(step==='D'){
+            altitude--
+        }
+        if(altitude<0 && !inValley){
+            valleys++
+            inValley=true
+        }
+        if(altitude>=0){
+            inValley=false
+        }
+    }
+    return valleys
+    
+}
